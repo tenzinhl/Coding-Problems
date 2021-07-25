@@ -1,0 +1,24 @@
+Competitive Programmer's Debugging Handbook:
+(and by competitive programmer I facetiously mean me)
+
+Must check (rankings are somewhat arbitrary):
+1. Uninitialized variables that compiler missed!!! (somehow) (HUUUUUGGGEEEE)
+	- Addendum: Variable initialization in GENERAL (i.e. bigger binary search bounds, or 1 instead of 0 etc.)
+2. Global variables/objects/arrays that need to be reset
+3. Overflow
+4. Hidden OOB access
+
+
+Less likely, but still lethal:
+1. Using wrong variable (i.e.: using i when j is the variable that matters for that loop)
+2. Typo >> self explanatory
+3. Incorrect math (when binary search, typing "ub - lb" instead of "ub + lb"
+4. Incorrect loop condition ("<" where it should be "<=", make sure loop includes all).
+5. Think again, missed edge cases?
+6. Don't confuse map.count() with map[key] when you're storing the number of times "key" has appeared in a map //(The first is a member function solely for checking if the key exists or not, or the number of entries with that key in the case of a multimap).
+
+Misc. :
+- While debugging with cout statements, make SURE to use "<< endl" instead of "\n"
+  this makes sure buffer is flushed and you can properly debug.
+- (Not applicable to in-competition coding) Think up test cases and test them on your
+  code

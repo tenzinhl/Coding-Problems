@@ -1,0 +1,6 @@
+Good Error codes to know for this system (most common to least common):
+-1073741819 (0xC0000005): Memory Access restricted (i.e.: Somewhere an array index is out of bounds).
+-1073741571 (0xC00000FD): Stack overflow, i.e. too much recursion, too many local varaibles.
+
+MinGW Compiler Error Codes:
+-"Undefined reference to WinMain" => You forgot to include a main() function in your file.s

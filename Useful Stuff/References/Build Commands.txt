@@ -1,0 +1,2 @@
+For g++
+Compile (greatly increased stack size): g++ -std=c++17 -Wshadow -Wall -Wl,--stack,0x9896800 -o "%e" "%f" -O2

@@ -1,0 +1,16 @@
+From ThemeSwitcher Project:
+As I'm reading through this tutorial I came across this:
+ <button type="button" className={`btn btn-${themeClass} btn-lg`}>{ theme || 'Choose' } Theme</button>
+ omg, and then I was like wtf are the {}{}{}}. So here's the rundown:
+ The encapsulating one is a JSX feature, it's how it knows when you are putting JS expressions
+ inside of your "JSX syntactic sugar", and in this case, the JS expression is a "Template
+ Literal" which uses another set of {} (note, this is a JS feature). Anyways yeah. TEMPLATE
+ LITERALS, I remembered that JSX uses {} to insert JS expressions, but I forgot about TEMPLATE
+ LITERALS. I remember those giving me crap before too. Goddamn there's a lot of bs in JS.
+ 
+Some terminology:
+- react "props": short for properties, <ThemeSwitcher name = 'hi'>, in there, name would be a prop. They all get
+  bundled up into a "props" object, which you can access in react. i.e. you can writ a function that accesses this.props.name
+- HTML "attribute": the OG props. when you do <div className="foo">, className is an attribute. Unlike React props, these
+  all have defined names and you can't just make them up when you make the HTML element (at the very least you shouldn't
+  if you want to follow the standard, but browsers are able to handle it somehow).

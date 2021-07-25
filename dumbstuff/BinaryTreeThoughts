@@ -1,0 +1,12 @@
+I was just thinking about binary tree rotations and I wanna put my thoughts down here.
+In the end it's not too complicated. The way I see it, all nodes in a binary tree have
+3 connections except for the root node (since there it has no parent). When you rotate
+a tree (or subtree, since rotating a subtree doesn't affect the rest of the tree, and
+is thus functionally the same), one of the subtrees will trade sides, as that subtree
+represents all nodes either greater (or less) than the parent node, but less (or greater)
+than the node you are rotating (in this case this would be a left rotation). Funnily enough,
+there is no agreed upon standard for naming the rotations. In my mind a rotation is
+named after the direction of rotation (if the nodes were to be animated in their movement).
+the subtree trades side as the node that becomes the new root only has space for two children,
+and the former parent inherits a new subtree, all while maintaining the wonderful order of 
+left < and right >.
