@@ -1,3 +1,8 @@
+"""
+DP attempt, that was kind of silly tbh. Doesn't fit cleanly into DP logic
+and takes a little too much wrangling.
+"""
+
 from heapq import *
 
 
@@ -34,14 +39,11 @@ def solution(l):
     for digit in l:
         mod_value = digit % 3
         if mod_value == 0:
-            digits_to_use.append(digit)
+            digits_to_use.append(mod_value)
         elif mod_value == 1:
-            heappush(mod1_pq, -digit)
+            heappush(mod1_pq, digit)
         else:
-            heappush(mod2_pq, -digit)
-
-    print(mod1_pq)
-    print(mod2_pq)
+            heappush(mod2_pq, digit)
     
     num_ones = len(mod1_pq)
     num_twos = len(mod2_pq)
@@ -54,45 +56,37 @@ def solution(l):
     # that can be consumed (which is what we want to maximize
     
     # YOOO! I think I just found a better method? When you sum all of the ones
-    # and twos mod three you'll be left with some value mod 3 that you can
-    # subtract from to get 0. At 2 the optimal thing to do is remove one 2,
-    # but you can remove 2 1's if no 2's are available. At 1 it's best to remove
-    # one 1, but you can remove two 2's if no other options are present!
-    remainder = (num_ones * 1 + num_twos * 2) % 3
+    # and twos mod three you'll be left
+    dp = [
+        [{"val": 0, "ones": 0, "twos": 0} for i in range(num_twos + 1)]
+        for j in range(num_ones + 1)
+    ]
 
-    ones_to_take = num_ones
-    twos_to_take = num_twos
+    for row in range(num_ones):
+        for col in range(num_twos):
+            # Update the the corresponding squares by taking the elementary
+            # steps
+            # The "no-op" steps
+            curr_node = dp[row][col]
+            curr_val = curr_node['val']
+            curr_ones = curr_node['ones']
+            curr_twos = curr_node['twos']
 
-    if remainder == 1:
-        if num_ones >= 1:
-            ones_to_take -= 1
-        elif num_twos >= 2:
-            twos_to_take -= 2
-        else:
-            num_ones = 0
-            num_twos = 0
-    elif remainder == 2:
-        if num_twos >= 1:
-            twos_to_take -= 1
-        elif num_ones >= 2:
-            ones_to_take -= 2
-        else:
-            ones_to_take = 0
-            twos_to_take = 0
-    
-    for i in range(ones_to_take):
-        digit = -1 * heappop(mod1_pq)
-        digits_to_use.append(digit)
-    
-    for i in range(twos_to_take):
-        digit = -1 * heappop(mod2_pq)
-        digits_to_use.append(digit)
-    
-    digits_to_use.sort(reverse=True)
+            update_node(dp[row][col + 1], curr_val, curr_ones, curr_twos)
+            update_node(dp[row + 1][col]
+            dp[row + 1][col] = max(dp[row + 1][col], dp[row][col])
+            
+            # Taking three 2s
+            if col + 3 < num_twos:
+                # It's either max of what it is 
+                dp[row][col + 3] = max(dp[row][col + 3], dp[row][col] + 3)
 
-    answer = 0
-    for digit in digits_to_use:
-        answer *= 10
-        answer += digit
-    
-    return answer
+
+def update_node(node, new_val, new_ones, new_twos):
+    if new_val > node['val']:
+        node['val'] = new_val
+        node['ones'] = new_ones
+        node['twos'] = new_twos
+        
+        
+ 
