@@ -1,3 +1,6 @@
 # Ignore all executables
 *.exe
 *.class
+
+# Ignore pycache's
+__pycache__

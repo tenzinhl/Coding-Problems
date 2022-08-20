@@ -18,20 +18,20 @@ def solution(s):
             # As if a solution exists the slices are of size slice_size and repeat, so
             # searching a contiguous region of size slice_size we must come across the
             # correct start point
-            for start in range(0, slice_size):
-                # Determine the slice sequence based on first sample
-                slice_sequence = s[start : start + slice_size]
 
-                seq_idx = 0
+            # WAIT LOL, I'm overthinking it. With the repeating sequence you don't need
+            # To try different starting points, when you shift one the sequence is still
+            # repeating starting from the first position.
+            slice_sequence = s[0 : slice_size]
 
-                slice_works = True
-                for i in range(0, N):
-                    if s[(start + i) % N] != slice_sequence[i % slice_size]:
-                        slice_works = False
-                        break
+            slice_works = True
+            for i in range(0, N):
+                if s[i] != slice_sequence[i % slice_size]:
+                    slice_works = False
+                    break
 
-                if slice_works:
-                    return N / slice_size
+            if slice_works:
+                return N / slice_size
 
     # If we weren't able to find a better factor we know worst case we can have
     # 1 slice
