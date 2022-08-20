@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "Standard MinGW",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.18362.0",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "C:/MinGW/x86_64-8.1.0-win32-seh/mingw64/bin/g++.exe"
+        }
+    ],
+    "version": 4
+}

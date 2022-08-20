@@ -1,0 +1,6 @@
+import os
+# env = Environment(CXX="g++", CXXFLAGS="-O2")
+
+# env.Program("hello.cc")
+env = DefaultEnvironment(tools=["mingw"], ENV = {'PATH': os.environ['PATH']})
+Program("hello.cc")

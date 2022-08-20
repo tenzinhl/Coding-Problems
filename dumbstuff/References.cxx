@@ -5,11 +5,17 @@ using namespace std;
 
 int ar[50];
 int& getReference(int i) {
-	return &ar[i];
+	// return ar[i] * 5; // Doesn't compile, since it's an rvalue expression
+	return ar[i];
 }
+
 int main()
 {
-	for (int i = 0; i < 50; i++) {
+	int i;
+	cin >> i;
+	cout << "cin.good(): " << cin.good() << endl;
+	
+	for (i = 0; i < 50; i++) {
 		ar[i] = i;
 	}
 	

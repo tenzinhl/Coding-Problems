@@ -1,0 +1,12 @@
+vscode insiders update notes:
+Current version e437d424c5e6de97632f5513229c7ebc2cf27a32
+At 5:35pm July 28th
+Commit is from 20 hours ago.
+
+Let's check for updates: currently none available. Let's wait till tomorrow.
+
+Yep, not only checked this morning but vscode bot explained how to do things once the lovely Alex Ross tagged the issue.
+
+So I did an update now new commit is from 9 hours ago
+
+At 6:48am July 29th
