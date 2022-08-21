@@ -1,4 +1,4 @@
-from prepare_the_bunnies_escape import solution
+from prepare_the_bunnies_escape_simple_bfs import solution
 import time
 
 test_input_1 = [

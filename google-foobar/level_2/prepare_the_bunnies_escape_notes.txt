@@ -35,4 +35,15 @@ Guesses as to what the issue is:
 
 Argh... can't figure it out tonight. Will have to try some other time.
 
-In the future another thing to consider when there's this much time is if overall approach is wrong.
+In the future another thing to consider when there's this much time is if overall approach is wrong (in this
+case I don't think it is, but rather if overall approach can be changed)
+
+# BFS Attempt
+Okay... nvm, I don't really know what I'm doing which sucks. I need to work soon too! BFS doesn't quite
+make sense the way I'm imagining it. Maybe the correct way is with a two phase BFS? First you exhaust
+all non wall-break possibilities, then use the walls found as potential starting points for the wall break
+BFS?. That should only be O(mn) for time complexity still which is nice.
+
+With the two stage I'd need to use Dijkstra's because the second stage would need to be prioritized
+
+# Can I just try a BFS which removes each of the walls once?
