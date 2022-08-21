@@ -100,7 +100,7 @@ def solution(map):
         # to finish from current position still puts us above best
         # dist, then we can abandon this path
         if best >= 0 and dist + (w - 1 - x) + (h - 1 - y) >= best:
-            # print("abandoning because can't match best path!")
+            # print("abandoning because can't beat best path!")
             return best
         
         # Mark

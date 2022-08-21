@@ -143,6 +143,78 @@ test_input_13 = [
 ]
 ans_13 = 5
 
+test_input_14 = [
+    [0, 0, 0, 1],
+    [1, 0, 1, 1],
+    [1, 1, 1, 0],
+    [1, 1, 1, 0],
+]
+ans_14 = -1
+
+# Non square matrices
+test_input_15 = [
+    [0],
+    [0],
+    [0],
+    [0],
+]
+ans_15 = 4
+
+test_input_15_5 = [
+    [0],
+    [0]
+]
+ans_15_5 = 2
+
+test_input_16 = [
+    [0],
+    [0],
+    [1],
+    [0],
+]
+ans_16 = 4
+
+test_input_17 = [
+    [0],
+    [1],
+    [1],
+    [0],
+]
+ans_17 = -1
+
+test_input_18 = [
+    [0, 0]
+]
+ans_18 = 2
+
+test_input_19 = [
+    [0, 0, 0, 0, 0]
+]
+ans_19 = 5
+
+test_input_20 = [
+    [0, 1, 0, 0, 0]
+]
+ans_20 = 5
+
+test_input_21 = [
+    [0, 1, 0, 1, 0]
+]
+ans_21 = -1
+
+test_input_22 = [
+    [0, 1, 0, 1, 0],
+    [0, 1, 0, 1, 0],
+]
+ans_22 = -1
+
+test_input_22 = [
+    [0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+    [0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0],
+]
+ans_22 = 15
+
+
 if __name__ == '__main__':
     # print('test input 1: ')
     # ans = solution(test_input_1)
@@ -170,3 +242,13 @@ if __name__ == '__main__':
     assert solution(test_input_11) == ans_11
     assert solution(test_input_12) == ans_12
     assert solution(test_input_13) == ans_13
+    assert solution(test_input_14) == ans_14
+    assert solution(test_input_15) == ans_15
+    assert solution(test_input_15_5) == ans_15_5
+    assert solution(test_input_16) == ans_16
+    assert solution(test_input_17) == ans_17
+    assert solution(test_input_18) == ans_18
+    assert solution(test_input_19) == ans_19
+    assert solution(test_input_20) == ans_20
+    assert solution(test_input_21) == ans_21
+    assert solution(test_input_22) == ans_22

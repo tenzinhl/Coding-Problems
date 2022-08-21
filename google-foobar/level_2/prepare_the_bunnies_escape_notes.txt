@@ -5,12 +5,18 @@ I'm failing a hidden verification test case online. Unclear where the issue is e
 Guesses as to what the issue is:
 
 # Guess 1: My pruning is over-eager/errored and is pruning out potential results
+- Haven't been able to find a test case that does this
 
 # Guess 2: My solution is timing out
+- Seems highly unlikely. But it might just be it as the others don't seem to be it.
+- In which case I should look into more pruning?
 
 # Guess 3: My solution isn't finding the optimal solution in one case
+- Maybe? What are some good test cases for this?
 
 # Guess 4: Solution is incorrectly counting steps in certain situations
+- I just don't see how. I mean at a high level this must be correct, but we're incrementing
+  distance with each step so I just don't know.
 
 # Guess 5: Finding a false solution that shouldn't be possible
   - Skipping squares?
