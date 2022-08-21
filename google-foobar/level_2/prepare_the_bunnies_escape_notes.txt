@@ -10,6 +10,9 @@ Guesses as to what the issue is:
 # Guess 2: My solution is timing out
 - Seems highly unlikely. But it might just be it as the others don't seem to be it.
 - In which case I should look into more pruning?
+  - Is it possible that running it 400 times is too bad? Do I need to use the wall removal
+    as one of the moves?
+  - Argh, idk how I didn't think of this, but you can just BFS here, idk why I'm trying to backtrack
 
 # Guess 3: My solution isn't finding the optimal solution in one case
 - Maybe? What are some good test cases for this?
@@ -32,3 +35,4 @@ Guesses as to what the issue is:
 
 Argh... can't figure it out tonight. Will have to try some other time.
 
+In the future another thing to consider when there's this much time is if overall approach is wrong.
