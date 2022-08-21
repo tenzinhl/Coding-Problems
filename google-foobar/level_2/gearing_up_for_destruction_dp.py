@@ -73,7 +73,7 @@ def solution(l):
             curr_twos = curr_node['twos']
 
             update_node(dp[row][col + 1], curr_val, curr_ones, curr_twos)
-            update_node(dp[row + 1][col]
+            update_node(dp[row + 1][col])
             dp[row + 1][col] = max(dp[row + 1][col], dp[row][col])
             
             # Taking three 2s
