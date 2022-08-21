@@ -1,4 +1,4 @@
-from prepare_the_bunnies_escape_simple_bfs import solution
+from prepare_the_bunnies_escape import solution
 import time
 
 test_input_1 = [
@@ -7,6 +7,7 @@ test_input_1 = [
     [1, 1, 0, 0],
     [1, 1, 1, 0]
 ]
+ans_1 = 7
 
 test_input_2 = [
     [0, 0, 0, 0, 0, 0],
@@ -43,7 +44,7 @@ test_input_4 = [
 ]
 
 # 13 rows, 13 cols, gets correct answer of 57
-test_input_4 = [
+test_input_4_5 = [
     [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
     [0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0],
@@ -71,7 +72,7 @@ test_input_5 = [
 ans_5 = -1
 
 # 6x6, one wall to break, answer should be 11
-test_input_5 = [
+test_input_5_5 = [
     [0, 1, 1, 0, 0, 0,],
     [0, 1, 1, 0, 0, 0,],
     [0, 1, 0, 0, 0, 0,],
@@ -79,6 +80,7 @@ test_input_5 = [
     [0, 1, 1, 0, 0, 0,],
     [0, 1, 1, 0, 0, 0,],
 ]
+ans_5_5 = -1
 
 # 1x1, answer should be 1
 test_input_6 = [
@@ -240,9 +242,10 @@ test_input_23 = [
 ]
 
 if __name__ == '__main__':
-    # print('test input 1: ')
-    # ans = solution(test_input_1)
-    # print(ans)
+    print('test input 1: ')
+    ans = solution(test_input_1)
+    print(ans)
+    assert ans == ans_1
 
     # print('test input 2: ')
     # ans = solution(test_input_2)
@@ -257,6 +260,7 @@ if __name__ == '__main__':
 
     print('test input 5: ')
     print(solution(test_input_5))
+    assert(solution(test_input_5) == ans_5)
 
     print('Running tests 6 through 22 as assertions...')
     assert solution(test_input_6) == ans_6

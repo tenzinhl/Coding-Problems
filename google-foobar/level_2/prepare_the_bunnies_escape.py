@@ -110,8 +110,6 @@ def solution(map):
             move = moves[direction]
             x_new = x + move[0]
             y_new = y + move[1]
-
-            # print(f'testing direction {direction}, x_new = {x_new}, y_new = {y_new}')
             
             if legal(x_new, y_new) and not prunable(x_new, y_new, direction):
                 # print(f'Trying direction {direction}, x_new = {x_new}, y_new = {y_new}')
@@ -137,6 +135,7 @@ def solution(map):
             if map[row][col] == 1:
                 # Clear the wall
                 map[row][col] = 0
+                # print(f'Backtracking with wall at ({row},{col}) removed')
                 new_ans = backtrack(1, ans, 0, 0)
                 if new_ans != -1:
                     if ans == -1:

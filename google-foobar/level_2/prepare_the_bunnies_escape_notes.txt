@@ -47,3 +47,24 @@ BFS?. That should only be O(mn) for time complexity still which is nice.
 With the two stage I'd need to use Dijkstra's because the second stage would need to be prioritized
 
 # Can I just try a BFS which removes each of the walls once?
+
+# Theory: solution "Time limit" is based on logical time and not physical time. As in it counts the number
+# of operations you do somehow and then whether you pass or fail is based on that! That would explain why
+# even though my BFS and Backtracking solutions are wicked fast, they fail test cases. Particularly the
+# confusing point was that the BFS solution despite being faster and getting the right answer for the same
+# test cases it was still failing all test cases.
+
+Oh what! I think I found a broken testcase that I just wasn't asserting aaahhh... nvm... it was because
+the test case's value was being overridden later because I'm an idiot.
+
+Yeah in this situation it seems like logical time is the key. Somehow they are tracking time complexity
+through number of instructions. So if that's the theory then I need to use the advanced double BFS.
+
+The idea here is to view the map as a 3D space (this technique can be expanded to multiple levels or in
+the context of this problem multiple wall breaks). Each 2D layer represents the map. The map is then
+duplicated once for each level of wall breaking, you can imagine them stacked on top of each other.
+
+We can BFS through the 3D space, we still want to go from smallest path size to largest and BFS accomplishes
+that. Whenever there's a wall taking that move is like a hole in the floor, you drop to the level below.
+
+If there are no more levels below that path disappears as an option. (A wall that wasn't broken)
