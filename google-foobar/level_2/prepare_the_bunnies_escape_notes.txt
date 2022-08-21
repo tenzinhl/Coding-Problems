@@ -1,0 +1,28 @@
+What is the issue?
+
+I'm failing a hidden verification test case online. Unclear where the issue is emerging
+
+Guesses as to what the issue is:
+
+# Guess 1: My pruning is over-eager/errored and is pruning out potential results
+
+# Guess 2: My solution is timing out
+
+# Guess 3: My solution isn't finding the optimal solution in one case
+
+# Guess 4: Solution is incorrectly counting steps in certain situations
+
+# Guess 5: Finding a false solution that shouldn't be possible
+  - Skipping squares?
+  - Improperly checking if square is blocked by wall?
+  - Improperly remarking walls?
+
+@ Approaches for solving:
+- Testing
+  Just write some test cases. Start small. Test for the above 4 guesses and some extra random cases
+
+- Code review
+  Keep thinking about the reasons and check the code for errors. Low priority imo
+
+Argh... can't figure it out tonight. Will have to try some other time.
+
